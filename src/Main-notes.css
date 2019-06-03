@@ -1,0 +1,9 @@
+.note-list {
+    list-style: none;
+}
+
+.note-list li {
+    border: 1px solid black;
+    text-align: center;
+    margin-right: 30px;
+}

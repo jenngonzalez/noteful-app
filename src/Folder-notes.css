@@ -1,0 +1,9 @@
+.folder-notes-list {
+    list-style: none;
+}
+
+.folder-notes-list li {
+    border: 1px solid black;
+    text-align: center;
+    margin-right: 30px;
+}

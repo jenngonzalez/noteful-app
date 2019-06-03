@@ -1,0 +1,11 @@
+.folder-list {
+    list-style: none;
+    margin-left: -35px;
+    margin-right: 5px;
+}
+
+.folder-list li {
+    text-align: left;
+    padding-bottom: 20px;
+    border: 1px solid blue;
+}
