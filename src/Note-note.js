@@ -1,12 +1,13 @@
 import React from 'react';
 import STORE from './dummy-store';
+import "./Note-note.css"
 
 export default function NoteNote(props) {
     const selectedNote = STORE.notes.find(note =>
         note.id === props.match.params.noteID
     )
     return (
-        <div>
+        <div className="note-body">
             <p>{selectedNote.content}</p>
             <p>{selectedNote.modified}</p>
         </div>

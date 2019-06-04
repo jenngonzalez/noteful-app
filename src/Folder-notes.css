@@ -3,7 +3,19 @@
 }
 
 .folder-notes-list li {
-    border: 1px solid black;
+    background: peachpuff;
     text-align: center;
     margin-right: 30px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.folder-notes-list a {
+    color: darkolivegreen;
+    text-decoration: none;
+}
+
+.folder-notes-list li:hover {
+    background: cyan;
 }

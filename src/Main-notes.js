@@ -6,13 +6,16 @@ import './Main-notes.css'
 export default class MainNotes extends Component {
     render() {
         const notes = STORE.notes.map(note => 
-            <li
+
+            <Link
+                to={`/note/${note.id}`}
                 key={note.id}
-                // folderID={note.folderId}
             >
-                <Link to={`/note/${note.id}`}>{note.name}</Link>
-            </li>
-            )
+                <li key={note.id}>
+                    {note.name}
+                </li>
+            </Link>    
+        )
         return (
             <ul className="note-list">
                 {notes}

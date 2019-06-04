@@ -8,11 +8,15 @@ export default function FolderNotes(props) {
         n.folderId === props.match.params.folderID
     )
     const uniqueNote = note.map((n, index) =>
-        <li key={index}>
-            <Link to={`/note/${n.id}`}>
+
+        <Link
+            to={`/note/${n.id}`}
+            key={n.id}
+        >
+            <li key={index}>
                 {n.name}
-            </Link>
-        </li>    
+            </li>
+        </Link>
     )
     
     return (

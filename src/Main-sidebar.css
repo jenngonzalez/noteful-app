@@ -2,6 +2,8 @@
     list-style: none;
     margin-left: -35px;
     margin-right: 5px;
+    border-right: 1px dashed black;
+    padding-right: 10px;
 }
 
 .folder-list li {

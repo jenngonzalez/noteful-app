@@ -1,0 +1,7 @@
+.note-body {
+    background: peachpuff;
+    border: .5px dotted gray;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 5px;
+}

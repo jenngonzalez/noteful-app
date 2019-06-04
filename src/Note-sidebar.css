@@ -1,0 +1,20 @@
+.note-folder button {
+    background: teal;
+    color: white;
+    font-size: 20px;
+    margin-left: 15px;
+    height: 40px;
+    width: 80px;
+    border-radius: 50%;
+}
+.note-folder p {
+    color: coral;
+    background: peachpuff;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-style: italic;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 5px;
+}

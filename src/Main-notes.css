@@ -3,8 +3,6 @@
 }
 
 .note-list li {
-    /* border: 1px dotted gray;
-    border-radius: 50%; */
     border-radius: 5px;
     text-align: center;
     margin-right: 30px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import STORE from './dummy-store';
+import './Note-sidebar.css';
 
 export default function NoteSidebar(props) {
 
@@ -14,7 +15,7 @@ export default function NoteSidebar(props) {
     )
 
     return (
-        <div>
+        <div className="note-folder">
             <button
                 // onClick={props.history.goBack()}
             >
