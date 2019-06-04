@@ -27,6 +27,11 @@ class App extends Component {
             />
             <Route
               path='/note/:noteID'
+              // render={(props, { history }) =>
+              //   <NoteSidebar
+              //     onClickBack={() => history.goBack()}
+              //   />
+              // }
               component={NoteSidebar}
             />
           </nav>

@@ -13,11 +13,14 @@ export default function NoteSidebar(props) {
     const selectedFolder = STORE.folders.find(f =>
     f.id === findFolder
     )
+    
+    // const { onClickBack } = this.props
 
     return (
         <div className="note-folder">
             <button
-                // onClick={props.history.goBack()}
+                type='button'
+                onClick={props.history.goBack}
             >
                 Back
             </button>
