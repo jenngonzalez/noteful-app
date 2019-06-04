@@ -5,7 +5,25 @@
 }
 
 .folder-list li {
-    text-align: left;
+    text-align: center;
     padding-bottom: 20px;
-    border: 1px solid blue;
+    padding-top: 20px;
+    /* border: 1px solid blue; */
+    border-radius: 15px;
+    background: peachpuff;
+    /* color: aqua; */
+    margin-bottom: 10px;
 }
+
+.folder-list a {
+    color: darkolivegreen;
+    text-decoration: none;
+}
+
+.folder-list li:hover {
+    background: coral;
+}
+
+/* .current {
+    border: 2px solid black;
+} */

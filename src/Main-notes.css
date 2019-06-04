@@ -3,7 +3,21 @@
 }
 
 .note-list li {
-    border: 1px solid black;
+    /* border: 1px dotted gray;
+    border-radius: 50%; */
+    border-radius: 5px;
     text-align: center;
     margin-right: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: peachpuff;
+}
+
+.note-list a {
+    color: darkolivegreen;
+    text-decoration: none;
+}
+
+.note-list li:hover {
+    background: cyan;
 }

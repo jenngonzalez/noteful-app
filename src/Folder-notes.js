@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import STORE from './dummy-store';
 import './Folder-notes.css';
 
@@ -8,10 +9,12 @@ export default function FolderNotes(props) {
     )
     const uniqueNote = note.map((n, index) =>
         <li key={index}>
-         {n.name}
+            <Link to={`/note/${n.id}`}>
+                {n.name}
+            </Link>
         </li>    
     )
-    console.log({note})
+    
     return (
             <ul className="folder-notes-list">
                 {uniqueNote}

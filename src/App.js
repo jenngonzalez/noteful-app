@@ -22,12 +22,12 @@ class App extends Component {
               component={MainSidebar}
             />
             <Route
-            path='/folder/:folderID'
-            component={FolderSidebar}
+              path='/folder/:folderID'
+              component={FolderSidebar}
             />
             <Route
-            path='/note/:noteID'
-            component={NoteSidebar}
+              path='/note/:noteID'
+              component={NoteSidebar}
             />
           </nav>
           <main className="main">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import STORE from './dummy-store';
 import './Main-notes.css'
 
@@ -9,7 +10,7 @@ export default class MainNotes extends Component {
                 key={note.id}
                 // folderID={note.folderId}
             >
-                <p>{note.name}</p>
+                <Link to={`/note/${note.id}`}>{note.name}</Link>
             </li>
             )
         return (
