@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import STORE from './dummy-store';
+import STORE from '../dummy-store';
 import './Folder-notes.css';
 
 export default function FolderNotes(props) {

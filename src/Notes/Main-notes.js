@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import STORE from './dummy-store';
+import STORE from '../dummy-store';
 import './Main-notes.css'
 
 export default class MainNotes extends Component {

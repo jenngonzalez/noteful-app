@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import STORE from './dummy-store';
+import STORE from '../dummy-store';
 import './Main-sidebar.css';
 
 export default class MainSidebar extends Component {

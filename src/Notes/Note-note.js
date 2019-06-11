@@ -1,5 +1,5 @@
 import React from 'react';
-import STORE from './dummy-store';
+import STORE from '../dummy-store';
 import "./Note-note.css"
 
 export default function NoteNote(props) {

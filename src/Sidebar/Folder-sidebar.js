@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import STORE from './dummy-store';
+import STORE from '../dummy-store';
 import { NavLink } from 'react-router-dom';
 import './Folder-sidebar.css';
 // import FolderNotes from './Folder-notes';
