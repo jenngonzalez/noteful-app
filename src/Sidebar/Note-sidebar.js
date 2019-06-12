@@ -1,32 +1,37 @@
-import React from 'react';
-import STORE from '../dummy-store';
+import React, { Component } from 'react';
+// import STORE from '../dummy-store';
+import NotefulContext from '../Noteful-context';
 import './Note-sidebar.css';
 
-export default function NoteSidebar(props) {
+export default class NoteSidebar extends Component {
 
-    const findNote = STORE.notes.find(n =>
-    n.id === props.match.params.noteID
-    )
-    
-    const findFolder = findNote.folderId
+    static contextType = NotefulContext;
 
-    const selectedFolder = STORE.folders.find(f =>
-    f.id === findFolder
-    )
-    
-    // const { onClickBack } = this.props
+    render() {
+        const { folders} = this.context;
+        const { notes } = this.context;
+        const findNote = notes.find(n =>
+            n.id === this.props.match.params.noteID
+        )
+        
+        const findFolder = findNote.folderId
 
-    return (
-        <div className="note-folder">
-            <button
-                type='button'
-                onClick={props.history.goBack}
-            >
-                Back
-            </button>
-            <p>{selectedFolder.name}</p>
-        </div>
-    )
+        const selectedFolder = folders.find(f =>
+            f.id === findFolder
+        )
+
+        return (
+            <div className="note-folder">
+                <button
+                    type='button'
+                    onClick={this.props.history.goBack}
+                >
+                    Back
+                </button>
+                <p>{selectedFolder.name}</p>
+            </div>
+        )
+    }
 }
 
 

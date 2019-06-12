@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import NotefulContext from '../Noteful-context';
 import { Link } from 'react-router-dom';
-import STORE from '../dummy-store';
+// import STORE from '../dummy-store';
 import './Main-notes.css'
 
 export default class MainNotes extends Component {
+
+    static contextType = NotefulContext;
+
     render() {
-        const notes = STORE.notes.map(note => 
+        const { notes } = this.context;
+        const allNotes = notes.map(note => 
 
             <Link
                 to={`/note/${note.id}`}
@@ -18,7 +23,7 @@ export default class MainNotes extends Component {
         )
         return (
             <ul className="note-list">
-                {notes}
+                {allNotes}
             </ul>
         )
     }

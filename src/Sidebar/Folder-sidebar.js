@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-import STORE from '../dummy-store';
+// import STORE from '../dummy-store';
 import { NavLink } from 'react-router-dom';
+import NotefulContext from '../Noteful-context';
 import './Folder-sidebar.css';
 // import FolderNotes from './Folder-notes';
 
 
 export default class FolderSidebar extends Component {
+
+    static contextType = NotefulContext
+
     render() {
-        const folders = STORE.folders.map(folder =>
+        const { folders } = this.context
+
+        const sidebarFolders = folders.map(folder =>
             <NavLink
                 to={`/folder/${folder.id}`}
                 activeClassName="current"
@@ -20,7 +26,7 @@ export default class FolderSidebar extends Component {
         )
         return (
             <ul className="folder-list">
-                {folders}
+                {sidebarFolders}
             </ul>
         )
     }
