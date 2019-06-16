@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+import { format } from 'date-fns'
 import NotefulContext from '../Noteful-context';
-// import config from '../config';
 import deleteNote from './delete-note';
-// import STORE from '../dummy-store';
 import "./Note-note.css"
 
 
@@ -22,7 +21,7 @@ export default class NoteNote extends Component {
         return (
         <div className="note-body">
             <p>{selectedNote.content}</p>
-            <p>Modified: {selectedNote.modified}</p>
+            <p>Modified: {format(selectedNote.modified, 'Do MMM YYYY')}</p>
             <button
                 type="button"
                 // onClick={this.handleDeleteNote}
