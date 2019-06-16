@@ -5,3 +5,20 @@
     padding: 10px;
     margin-right: 5px;
 }
+
+.note-body button {
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    color: coral;
+    background: white;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.note-body button:hover {
+    background: black;
+    color: peachpuff;
+}

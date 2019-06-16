@@ -11,7 +11,6 @@ export default class MainNotes extends Component {
     render() {
         const { notes } = this.context;
         const allNotes = notes.map(note => 
-
             <Link
                 to={`/note/${note.id}`}
                 key={note.id}
@@ -19,7 +18,13 @@ export default class MainNotes extends Component {
                 <li key={note.id}>
                     {note.name}
                 </li>
-            </Link>    
+            </Link>
+                // <button
+                //     type="button"
+                //     key={note.id}
+                // >
+                //     Delete
+                // </button>
         )
         return (
             <ul className="note-list">

@@ -6,7 +6,7 @@ const NotefulContext = React.createContext({
     // context needs the shape of the data
     folders: [],
     notes: [],
-    // deleteNote: () => {},
+    deleteNote: () => {},
     // addNote()
     // addFolder()
 })

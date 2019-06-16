@@ -7,23 +7,67 @@ import MainNotes from './Notes/Main-notes';
 import FolderNotes from './Notes/Folder-notes';
 import NoteNote from './Notes/Note-note';
 import NotefulContext from './Noteful-context';
-import STORE from './dummy-store';
+// import STORE from './dummy-store';
+import config from './config';
 import './App.css'
 
 class App extends Component {
   
   state = {
-    folders: STORE.folders,
-    notes: STORE.notes,
+    // folders: STORE.folders,
+    // notes: STORE.notes,
+    folders: [],
+    notes: [],
     error: null,
   }
 
+  deleteNote = noteId => {
+    const newNotes = this.state.notes.filter(note =>
+      note.id !== noteId
+    )
+    this.setState({
+      bookmarks: newNotes
+    })
+  }
+
+
+  componentDidMount() {
+    // console.log(alert(`Hello!`));
+    Promise.all([
+      fetch(config.API_FOLDERS, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        }
+      }),
+      fetch(config.API_NOTES, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        }
+      })
+    ]).then(([foldersResponse, notesResponse]) => {
+        if (!foldersResponse.ok) {
+          throw new Error(foldersResponse.status)
+        };
+        if (!notesResponse.ok) {
+          throw new Error(notesResponse.status)
+        };
+        return Promise.all([foldersResponse.json(), notesResponse.json()]);
+      })
+      // .then(this.setNoteful)
+      .then(([folders, notes]) => {
+        this.setState({folders, notes});
+      })
+      .catch(error => this.setState({ error }))
+  }
 
   render() {
 
     const contextValue = {
       folders: this.state.folders,
       notes: this.state.notes,
+      deleteNote: this.deleteNote
     }
 
     return (
@@ -44,11 +88,6 @@ class App extends Component {
               />
               <Route
                 path='/note/:noteID'
-                // render={(props, { history }) =>
-                //   <NoteSidebar
-                //     onClickBack={() => history.goBack()}
-                //   />
-                // }
                 component={NoteSidebar}
               />
             </nav>
