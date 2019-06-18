@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import NotefulContext from '../Noteful-context';
 // import STORE from '../dummy-store';
 import './Main-sidebar.css';
@@ -24,9 +24,12 @@ export default class MainSidebar extends Component {
         )
 
         return (
-            <ul className="folder-list">
-                {sidebarFolders}
-            </ul>
+            <div className="main-sidebar">
+                <ul className="folder-list">
+                 {sidebarFolders}
+                </ul>
+                <Link to='/add-folder'>Add New Folder</Link>
+            </div>
         )
     }
 }

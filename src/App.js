@@ -7,6 +7,7 @@ import MainNotes from './Notes/Main-notes';
 import FolderNotes from './Notes/Folder-notes';
 import NoteNote from './Notes/Note-note';
 import NotefulContext from './Noteful-context';
+import AddFolder from './AddFolder/AddFolder';
 // import STORE from './dummy-store';
 import config from './config';
 import './App.css'
@@ -26,13 +27,18 @@ class App extends Component {
       note.id !== noteId
     )
     this.setState({
-      bookmarks: newNotes
+      notes: newNotes
+    })
+  }
+
+  addFolder = newFolder => {
+    this.setState({
+      folders: [...this.state.folders, newFolder]
     })
   }
 
 
   componentDidMount() {
-    // console.log(alert(`Hello!`));
     Promise.all([
       fetch(config.API_FOLDERS, {
         method: 'GET',
@@ -55,7 +61,6 @@ class App extends Component {
         };
         return Promise.all([foldersResponse.json(), notesResponse.json()]);
       })
-      // .then(this.setNoteful)
       .then(([folders, notes]) => {
         this.setState({folders, notes});
       })
@@ -67,7 +72,8 @@ class App extends Component {
     const contextValue = {
       folders: this.state.folders,
       notes: this.state.notes,
-      deleteNote: this.deleteNote
+      deleteNote: this.deleteNote,
+      addFolder: this.addFolder
     }
 
     return (
@@ -103,6 +109,10 @@ class App extends Component {
               <Route
                 path='/note/:noteID'
                 component={NoteNote}
+              />
+              <Route
+                path='/add-folder'
+                component={AddFolder}
               />
             </main>
           </div>
