@@ -1,0 +1,12 @@
+.add-note-form {
+    display: block
+}
+
+label {
+    display: block;
+}
+
+button {
+    display: block;
+    margin-top: 20px;
+}

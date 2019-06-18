@@ -8,6 +8,7 @@ import FolderNotes from './Notes/Folder-notes';
 import NoteNote from './Notes/Note-note';
 import NotefulContext from './Noteful-context';
 import AddFolder from './AddFolder/AddFolder';
+import AddNote from './AddNote/AddNote';
 // import STORE from './dummy-store';
 import config from './config';
 import './App.css'
@@ -34,6 +35,12 @@ class App extends Component {
   addFolder = newFolder => {
     this.setState({
       folders: [...this.state.folders, newFolder]
+    })
+  }
+
+  addNote = newNote => {
+    this.setState({
+      notes: [...this.state.notes, newNote]
     })
   }
 
@@ -73,7 +80,8 @@ class App extends Component {
       folders: this.state.folders,
       notes: this.state.notes,
       deleteNote: this.deleteNote,
-      addFolder: this.addFolder
+      addFolder: this.addFolder,
+      addNote: this.addNote
     }
 
     return (
@@ -113,6 +121,10 @@ class App extends Component {
               <Route
                 path='/add-folder'
                 component={AddFolder}
+              />
+              <Route
+                path='/add-note'
+                component={AddNote}
               />
             </main>
           </div>

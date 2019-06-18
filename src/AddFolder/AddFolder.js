@@ -1,7 +1,3 @@
-// implement Add Folder button in App nav
-// display component with /add-folder path
-
-
 import React, { Component } from 'react';
 import NotefulContext from '../Noteful-context';
 import PropTypes from 'prop-types';
@@ -49,7 +45,6 @@ class AddFolder extends Component {
                 this.context.addFolder(data)
                 this.props.history.push('/')
             })
-            // .then(this.props.history.push('/'))
             .catch(error => {
                 this.setState({ error })
             })
