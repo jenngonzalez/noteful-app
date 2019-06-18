@@ -9,6 +9,7 @@ import NoteNote from './Notes/Note-note';
 import NotefulContext from './Noteful-context';
 import AddFolder from './AddFolder/AddFolder';
 import AddNote from './AddNote/AddNote';
+import AppError from './AppError';
 // import STORE from './dummy-store';
 import config from './config';
 import './App.css'
@@ -92,40 +93,44 @@ class App extends Component {
         <NotefulContext.Provider value={contextValue}>
           <div className="app-body">
             <nav className="sidebar">
-              <Route
-                exact path='/'
-                component={MainSidebar}
-              />
-              <Route
-                path='/folder/:folderID'
-                component={FolderSidebar}
-              />
-              <Route
-                path='/note/:noteID'
-                component={NoteSidebar}
-              />
+              <AppError>
+                <Route
+                  exact path='/'
+                  component={MainSidebar}
+                />
+                <Route
+                  path='/folder/:folderID'
+                  component={FolderSidebar}
+                />
+                <Route
+                  path='/note/:noteID'
+                  component={NoteSidebar}
+                />
+              </AppError>
             </nav>
             <main className="main">
-              <Route
-                exact path='/'
-                component={MainNotes}
-              />
-              <Route
-                path='/folder/:folderID'
-                component={FolderNotes}
-              />
-              <Route
-                path='/note/:noteID'
-                component={NoteNote}
-              />
-              <Route
-                path='/add-folder'
-                component={AddFolder}
-              />
-              <Route
-                path='/add-note'
-                component={AddNote}
-              />
+              <AppError>
+                <Route
+                  exact path='/'
+                  component={MainNotes}
+                />
+                <Route
+                  path='/folder/:folderID'
+                  component={FolderNotes}
+                />
+                <Route
+                  path='/note/:noteID'
+                  component={NoteNote}
+                />
+                <Route
+                  path='/add-folder'
+                  component={AddFolder}
+                />
+                <Route
+                  path='/add-note'
+                  component={AddNote}
+                />
+              </AppError>
             </main>
           </div>
         </NotefulContext.Provider>

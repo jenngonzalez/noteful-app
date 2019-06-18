@@ -31,7 +31,9 @@ export default class MainNotes extends Component {
                 <ul className="note-list">
                     {allNotes}
                 </ul>
+                <button>
                 <Link to="/add-note">Add New Note</Link>
+                </button>
             </div>
         )
     }
