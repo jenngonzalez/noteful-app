@@ -19,3 +19,19 @@
 .note-list li:hover {
     background: cyan;
 }
+
+
+#new-note {
+    background: darkolivegreen;
+    color: peachpuff;
+}
+
+#new-note:hover {
+    background: yellow;
+    color: coral;
+}
+
+.main-notes a {
+    text-decoration: none;
+}
+

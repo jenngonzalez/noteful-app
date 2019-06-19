@@ -1,12 +1,44 @@
 .add-note-form {
-    display: block
+    width: 60%;
+    height: 500px;
+    display: block;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 15px;
 }
 
-label {
+.add-note-form label, .add-note-form select {
+    margin-left: auto;
+    margin-right: auto;
     display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-button {
-    display: block;
+.add-note-form label {
     margin-top: 20px;
+}
+
+.add-note-form input {
+    width: 60%;
+}
+
+.add-note-form select {
+    margin-bottom: 30px;
+}
+
+.add-note-form button {
+    height: 30px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.add-note-form button:hover {
+    background: coral;
+    color: white;
+}
+
+#noteContent {
+    height: 200px;
+    width: 60%;
 }

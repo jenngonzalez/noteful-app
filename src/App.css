@@ -31,3 +31,7 @@ header a {
     width: 75%;
     /* border: 2px solid red; */
 }
+
+button:hover {
+    cursor: pointer
+}

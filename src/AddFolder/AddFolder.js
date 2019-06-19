@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NotefulContext from '../Noteful-context';
 import PropTypes from 'prop-types';
 import config from '../config';
+import './AddFolder.css';
 
 
 class AddFolder extends Component {
@@ -59,7 +60,7 @@ class AddFolder extends Component {
         return (
             <form className="add-folder-form" onSubmit={this.handleSubmit}>
                 <label htmlFor="folderName">
-                    New Folder Name
+                    New Folder Name:
                 </label>
                 <input type="text" name="folderName" id="folderName" required>
                 </input>

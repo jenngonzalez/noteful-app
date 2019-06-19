@@ -10,10 +10,8 @@
     text-align: center;
     padding-bottom: 20px;
     padding-top: 20px;
-    /* border: 1px solid blue; */
     border-radius: 15px;
     background: peachpuff;
-    /* color: aqua; */
     margin-bottom: 10px;
 }
 
@@ -26,6 +24,17 @@
     background: coral;
 }
 
-/* .current {
-    border: 2px solid black;
-} */
+
+#new-folder {
+    background: darkolivegreen;
+    color: peachpuff;
+}
+
+#new-folder:hover {
+    background: yellow;
+    color: coral;
+}
+
+.main-sidebar a {
+    text-decoration: none;
+}

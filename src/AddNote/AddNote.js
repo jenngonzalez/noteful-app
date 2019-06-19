@@ -72,17 +72,19 @@ class AddNote extends Component {
         return(
             <form className="add-note-form" onSubmit={this.handleSubmit}>
                 <label htmlFor="noteName">
-                    Note Name
+                    Note Name:
                 </label>
                 <input type="text" name="noteName" id="noteName" required>
                 </input>
                 <label htmlFor="noteContent">
-                    Note Content
+                    Note Content:
                 </label>
-                <input type="text" name="noteContent" id="noteContent">
-                </input>
+                {/* <input type="text" name="noteContent" id="noteContent">
+                </input> */}
+                <textarea name="noteContent" id="noteContent">
+                </textarea>
                 <label htmlFor="noteFolder">
-                    Select Folder
+                    Select Folder:
                 </label>
                 <select name="noteFolder" id="noteFolder">
                     {folderList}

@@ -27,8 +27,13 @@ export default class MainSidebar extends Component {
             <div className="main-sidebar">
                 <ul className="folder-list">
                  {sidebarFolders}
+
+                    <Link to='/add-folder'>
+                        <li id="new-folder">
+                            Add New Folder
+                        </li>
+                    </Link>
                 </ul>
-                <Link to='/add-folder'>Add New Folder</Link>
             </div>
         )
     }
