@@ -9,18 +9,29 @@ class AddFolder extends Component {
 
     static contextType = NotefulContext;
 
-    state = {
-        error: null
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            newFolder: ''
+        };
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({newFolder: event.target.value})
     }
 
     handleSubmit = e => {
-        console.log('hello')
         e.preventDefault();
         const { folderName } = e.target
-        const userFolder = folderName.value
+        // const userFolder = folderName.value
+        const userFolder = this.state.newFolder;
         const newId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        console.log(newId)
-        console.log(userFolder)
+        // console.log(newId)
+        // console.log(userFolder)
         const newFolder = {
             id: newId,
             name: userFolder
@@ -62,7 +73,7 @@ class AddFolder extends Component {
                 <label htmlFor="folderName">
                     New Folder Name:
                 </label>
-                <input type="text" name="folderName" id="folderName" required>
+                <input type="text" name="folderName" id="folderName" value={this.state.newFolder} onChange={this.handleChange} required>
                 </input>
                 <button
                     type="submit"
@@ -82,5 +93,5 @@ class AddFolder extends Component {
 export default AddFolder
 
 AddFolder.propTypes = {
-    folder: PropTypes.string
+    history: PropTypes.object
 }

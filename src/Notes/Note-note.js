@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { format } from 'date-fns'
 import NotefulContext from '../Noteful-context';
-import deleteNote from './delete-note';
+import PropTypes from 'prop-types';
+// import deleteNote from './delete-note';
+import config from '../config';
 import "./Note-note.css"
 
 
@@ -11,6 +13,26 @@ export default class NoteNote extends Component {
 
     static contextType = NotefulContext;
 
+
+    deleteNote(noteId, callback) {
+        fetch(config.API_NOTES + `${noteId}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json'
+            },
+        }).then(response => {
+            if(!response.ok) {
+                throw new Error(response.status)
+            }
+            return response.json()
+        }).then(data=> {
+            callback(noteId)
+        }).then(this.props.history.push('/'))
+        
+        .catch(error => {
+            console.error(error)
+        })
+    }
 
     render() {
         const { notes } = this.context
@@ -26,7 +48,7 @@ export default class NoteNote extends Component {
                 type="button"
                 // onClick={this.handleDeleteNote}
                 onClick={() => {
-                    deleteNote(selectedNote.id, this.context.deleteNote)
+                    this.deleteNote(selectedNote.id, this.context.deleteNote)
                 }}
             >
                 Delete note
@@ -38,12 +60,7 @@ export default class NoteNote extends Component {
 
 
 
-// when you click on a note, this component appears showing the note name, content, and date modified
-
-// delete - if successful, redirect to "/" path
-
-// to delete notes - make a DELETE request to the /notes/<note-id> endpoint
-
-//You can implement the DELETE request in the component that owns the delete button, and then use a callback context value to update the state in your top level component.
-
-// After making successful a DELETE request, you can use a this.state.notes.filter method along with setState to remove a note from state and update context.
+NoteNote.propTypes = {
+    history: PropTypes.object,
+    match: PropTypes.object
+}

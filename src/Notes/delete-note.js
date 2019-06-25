@@ -13,9 +13,14 @@ export default function deleteNote(noteId, callback) {
         return response.json()
     }).then(data=> {
         callback(noteId)
-    }).then(window.location.assign('/'))
+    }).then(this.props.history.push('/'))
     
     .catch(error => {
         console.error(error)
     })
 }
+
+
+//.then(window.location.assign('/'))
+
+// how to use props.history in a function within it's own component?

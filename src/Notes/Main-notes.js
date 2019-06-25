@@ -19,12 +19,6 @@ export default class MainNotes extends Component {
                     {note.name}
                 </li>
             </Link>
-                // <button
-                //     type="button"
-                //     key={note.id}
-                // >
-                //     Delete
-                // </button>
         )
         return (
             <div className="main-notes">
@@ -36,7 +30,6 @@ export default class MainNotes extends Component {
                         </li>
                     </Link>
                 </ul>
-                {/* <Link to="/add-note"><button>Add New Note</button></Link> */}
             </div>
         )
     }

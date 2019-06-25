@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NotefulContext from '../Noteful-context';
+import PropTypes from 'prop-types';
 import config from '../config';
 import './AddNote.css';
 
@@ -7,17 +8,43 @@ class AddNote extends Component {
 
     static contextType = NotefulContext
 
-    state = {
-        error: null
+    constructor(props) {
+        super(props);
+        this.state = {
+            error: null,
+            newNote: '',
+            newFolderName: '',
+            newContent: '',
+        }
+
+        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeFolder = this.handleChangeFolder.bind(this);
+        this.handleChangeContent = this.handleChangeContent.bind(this);
+    }
+
+    handleChangeName(event) {
+        this.setState({newNote: event.target.value})
+    }
+
+    handleChangeFolder(event) {
+        this.setState({newFolderName: event.target.value})
+    }
+
+    handleChangeContent(event) {
+        this.setState({newContent: event.target.value})
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
         const { noteName } = e.target
-        const newNoteName = noteName.value
+        // const newNoteName = noteName.value
+        const newNoteName = this.state.newNote;
         const { noteContent } = e.target
-        const newNoteContent = noteContent.value
+        // const newNoteContent = noteContent.value
+        const newNoteContent = this.state.newContent;
         const selectedFolder = document.getElementById("noteFolder")
+        // const selectedFolder = this.state.newFolderName;
+        // how to rework this to call from state?
         const noteFolder = selectedFolder.options[selectedFolder.selectedIndex]
         const noteFolderId = noteFolder.id
         const dateAdded = new Date()
@@ -74,19 +101,19 @@ class AddNote extends Component {
                 <label htmlFor="noteName">
                     Note Name:
                 </label>
-                <input type="text" name="noteName" id="noteName" required>
+                <input type="text" name="noteName" id="noteName" required onChange={this.handleChangeName}>
                 </input>
                 <label htmlFor="noteContent">
                     Note Content:
                 </label>
                 {/* <input type="text" name="noteContent" id="noteContent">
                 </input> */}
-                <textarea name="noteContent" id="noteContent">
+                <textarea name="noteContent" id="noteContent" onChange={this.handleChangeContent} required>
                 </textarea>
                 <label htmlFor="noteFolder">
                     Select Folder:
                 </label>
-                <select name="noteFolder" id="noteFolder">
+                <select name="noteFolder" id="noteFolder" onChange={this.handleChangeFolder} required>
                     {folderList}
                 </select>
                 <button type="submit">
@@ -101,3 +128,7 @@ class AddNote extends Component {
 }
 
 export default AddNote
+
+AddNote.propTypes = {
+    history: PropTypes.object
+}
