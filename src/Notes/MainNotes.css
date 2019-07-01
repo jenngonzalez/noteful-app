@@ -6,7 +6,7 @@
     border-radius: 5px;
     text-align: center;
     margin-right: 30px;
-    padding: 10px;
+    padding: 0px;
     margin-bottom: 10px;
     background: peachpuff;
 }
@@ -23,15 +23,25 @@
 
 #new-note {
     background: darkolivegreen;
+}
+
+#new-note a {
     color: peachpuff;
 }
 
 #new-note:hover {
     background: yellow;
+}
+
+#new-note a:hover {
     color: coral;
 }
 
 .main-notes a {
     text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
 }
 

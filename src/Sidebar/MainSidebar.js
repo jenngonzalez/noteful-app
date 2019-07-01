@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import NotefulContext from '../Noteful-context';
-// import STORE from '../dummy-store';
-import './Main-sidebar.css';
+import './MainSidebar.css';
 
 export default class MainSidebar extends Component {
 
@@ -12,27 +11,26 @@ export default class MainSidebar extends Component {
         const { folders } = this.context
 
         const sidebarFolders = folders.map(folder =>
-            <NavLink
-                to={`/folder/${folder.id}`}
-                key={folder.id}
-                activeClassName="current"
-            >
-                <li key={folder.id}>
+            <li key={folder.id}>
+                <NavLink
+                    to={`/folder/${folder.id}`}
+                    key={folder.id}
+                    activeClassName="current"
+                >
                     {folder.name}
-                </li>
-            </NavLink>
+                </NavLink>
+            </li>
         )
 
         return (
             <div className="main-sidebar">
                 <ul className="folder-list">
-                 {sidebarFolders}
-
-                    <Link to='/add-folder'>
-                        <li id="new-folder">
+                    {sidebarFolders}
+                    <li id="new-folder">
+                        <Link to='/add-folder'>
                             Add New Folder
-                        </li>
-                    </Link>
+                        </Link>
+                    </li>
                 </ul>
             </div>
         )

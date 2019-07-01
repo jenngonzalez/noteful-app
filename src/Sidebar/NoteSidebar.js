@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-// import STORE from '../dummy-store';
 import NotefulContext from '../Noteful-context';
 import PropTypes from 'prop-types';
-import './Note-sidebar.css';
+import './NoteSidebar.css';
 
 export default class NoteSidebar extends Component {
 
@@ -29,16 +28,14 @@ export default class NoteSidebar extends Component {
                 >
                     Back
                 </button>
-                <p>{selectedFolder.name}</p>
+                <div className="folder-name">          {selectedFolder.name}
+                </div>
             </div>
         )
     }
 }
 
 
-// this component should include a "back" button (use programmatic navigation) and the name of the current folder
-
-// need to find the folderId that matches the current note's folderId
 
 NoteSidebar.propTypes = {
     history: PropTypes.object,

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import NotefulContext from '../Noteful-context';
 import { Link } from 'react-router-dom';
-// import STORE from '../dummy-store';
-import './Folder-notes.css';
+import './FolderNotes.css';
 
 export default class FolderNotes extends Component {
 
@@ -14,14 +13,14 @@ export default class FolderNotes extends Component {
             n.folderId === this.props.match.params.folderID
         )
         const uniqueNote = note.map((n, index) =>
-            <Link
-                to={`/note/${n.id}`}
-                key={n.id}
-            >
-                <li key={index}>
+            <li key={index}>
+                <Link
+                    to={`/note/${n.id}`}
+                    key={n.id}
+                >
                     {n.name}
-                </li>
-            </Link>
+                </Link>
+            </li>
         )
     
         return (

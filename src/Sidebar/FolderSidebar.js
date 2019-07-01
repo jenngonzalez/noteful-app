@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-// import STORE from '../dummy-store';
 import { NavLink } from 'react-router-dom';
 import NotefulContext from '../Noteful-context';
-import './Folder-sidebar.css';
-// import FolderNotes from './Folder-notes';
+import './FolderSidebar.css';
 
 
 export default class FolderSidebar extends Component {
@@ -14,15 +12,15 @@ export default class FolderSidebar extends Component {
         const { folders } = this.context
 
         const sidebarFolders = folders.map(folder =>
-            <NavLink
-                to={`/folder/${folder.id}`}
-                activeClassName="current"
-                key={folder.id}
-            >
-                <li key={folder.id}>
+            <li key={folder.id}>
+                <NavLink
+                    to={`/folder/${folder.id}`}
+                    activeClassName="current"
+                    key={folder.id}
+                >
                     {folder.name}
-                </li>
-            </NavLink>
+                </NavLink>
+            </li>
         )
         return (
             <ul className="folder-list">

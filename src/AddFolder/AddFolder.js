@@ -30,8 +30,6 @@ class AddFolder extends Component {
         // const userFolder = folderName.value
         const userFolder = this.state.newFolder;
         const newId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-        // console.log(newId)
-        // console.log(userFolder)
         const newFolder = {
             id: newId,
             name: userFolder
@@ -75,10 +73,7 @@ class AddFolder extends Component {
                 </label>
                 <input type="text" name="folderName" id="folderName" value={this.state.newFolder} onChange={this.handleChange} required>
                 </input>
-                <button
-                    type="submit"
-                    // onSubmit={e => this.handleSubmit(e)}
-                >
+                <button type="submit">
                     Add Folder
                 </button>
                 <button type="button" onClick={this.handleClickCancel}>

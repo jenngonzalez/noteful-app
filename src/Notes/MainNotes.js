@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import NotefulContext from '../Noteful-context';
 import { Link } from 'react-router-dom';
-// import STORE from '../dummy-store';
-import './Main-notes.css'
+import './MainNotes.css'
 
 export default class MainNotes extends Component {
 
@@ -11,24 +10,24 @@ export default class MainNotes extends Component {
     render() {
         const { notes } = this.context;
         const allNotes = notes.map(note => 
-            <Link
-                to={`/note/${note.id}`}
-                key={note.id}
-            >
-                <li key={note.id}>
+            <li key={note.id}>
+                <Link
+                    to={`/note/${note.id}`}
+                    key={note.id}
+                >
                     {note.name}
-                </li>
-            </Link>
+                </Link>
+            </li>
         )
         return (
             <div className="main-notes">
                 <ul className="note-list">
                     {allNotes}
-                    <Link to="add-note">
-                        <li id="new-note">
+                    <li id="new-note">
+                        <Link to="add-note">
                             Add New Note
-                        </li>
-                    </Link>
+                        </Link>
+                    </li>
                 </ul>
             </div>
         )

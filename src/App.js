@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-import MainSidebar from './Sidebar/Main-sidebar';
-import FolderSidebar from './Sidebar/Folder-sidebar';
-import NoteSidebar from './Sidebar/Note-sidebar';
-import MainNotes from './Notes/Main-notes';
-import FolderNotes from './Notes/Folder-notes';
-import NoteNote from './Notes/Note-note';
+import MainSidebar from './Sidebar/MainSidebar';
+import FolderSidebar from './Sidebar/FolderSidebar';
+import NoteSidebar from './Sidebar/NoteSidebar';
+import MainNotes from './Notes/MainNotes';
+import FolderNotes from './Notes/FolderNotes';
+import NoteNote from './Notes/NoteNote';
 import NotefulContext from './Noteful-context';
 import AddFolder from './AddFolder/AddFolder';
 import AddNote from './AddNote/AddNote';
 import AppError from './AppError';
-// import STORE from './dummy-store';
 import config from './config';
 import './App.css'
 
 class App extends Component {
   
   state = {
-    // folders: STORE.folders,
-    // notes: STORE.notes,
     folders: [],
     notes: [],
     error: null,

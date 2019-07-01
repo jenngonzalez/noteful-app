@@ -36,6 +36,7 @@ class AddNote extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        console.log(this.state.newFolderName);
         const { noteName } = e.target
         // const newNoteName = noteName.value
         const newNoteName = this.state.newNote;
@@ -106,8 +107,6 @@ class AddNote extends Component {
                 <label htmlFor="noteContent">
                     Note Content:
                 </label>
-                {/* <input type="text" name="noteContent" id="noteContent">
-                </input> */}
                 <textarea name="noteContent" id="noteContent" onChange={this.handleChangeContent} required>
                 </textarea>
                 <label htmlFor="noteFolder">

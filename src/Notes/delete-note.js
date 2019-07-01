@@ -1,6 +1,6 @@
 import config from '../config';
 
-export default function deleteNote(noteId, callback) {
+export default function deleteNote(noteId, callback, history) {
     fetch(config.API_NOTES + `${noteId}`, {
         method: 'DELETE',
         headers: {
@@ -13,14 +13,9 @@ export default function deleteNote(noteId, callback) {
         return response.json()
     }).then(data=> {
         callback(noteId)
-    }).then(this.props.history.push('/'))
+    }).then(history.push('/'))
     
     .catch(error => {
         console.error(error)
     })
 }
-
-
-//.then(window.location.assign('/'))
-
-// how to use props.history in a function within it's own component?
