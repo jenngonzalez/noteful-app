@@ -17,6 +17,7 @@ export default class FolderNotes extends Component {
                 <Link
                     to={`/note/${n.id}`}
                     key={n.id}
+                    aria-label={`"See contents of this note: ${n.name}"`}
                 >
                     {n.name}
                 </Link>

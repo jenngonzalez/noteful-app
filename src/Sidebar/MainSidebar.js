@@ -16,6 +16,7 @@ export default class MainSidebar extends Component {
                     to={`/folder/${folder.id}`}
                     key={folder.id}
                     activeClassName="current"
+                    aria-label={`"See notes in this folder: ${folder.name}"`}
                 >
                     {folder.name}
                 </NavLink>
