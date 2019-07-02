@@ -70,8 +70,18 @@ class AddFolder extends Component {
             <form className="add-folder-form" onSubmit={this.handleSubmit}>
                 <label htmlFor="folderName">
                     New Folder Name:
+                    <span className="requiredField">(required)</span>
                 </label>
-                <input type="text" name="folderName" id="folderName" value={this.state.newFolder} onChange={this.handleChange} required>
+                <input
+                    type="text"
+                    name="folderName"
+                    id="folderName"
+                    value={this.state.newFolder}
+                    onChange={this.handleChange}
+                    aria-label="Create a new folder for your notes"
+                    aria-required="true"
+                    required
+                >
                 </input>
                 <button type="submit">
                     Add Folder

@@ -12,21 +12,21 @@
 }
 
 .note-list a {
-    color: darkolivegreen;
+    color: #720056;
     text-decoration: none;
 }
 
 .note-list li:hover {
-    background: cyan;
+    background: #36EC41;
 }
 
 
 #new-note {
-    background: darkolivegreen;
+    background: coral;
 }
 
 #new-note a {
-    color: peachpuff;
+    color: #720056;
 }
 
 #new-note:hover {

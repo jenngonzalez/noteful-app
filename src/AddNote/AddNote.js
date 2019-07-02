@@ -102,17 +102,40 @@ class AddNote extends Component {
                 <label htmlFor="noteName">
                     Note Name:
                 </label>
-                <input type="text" name="noteName" id="noteName" required onChange={this.handleChangeName}>
+                <input
+                    type="text"
+                    name="noteName"
+                    id="noteName"
+                    aria-label="Name for your new note"
+                    aria-required="true"
+                    onChange={this.handleChangeName}
+                    required
+                >
                 </input>
                 <label htmlFor="noteContent">
                     Note Content:
                 </label>
-                <textarea name="noteContent" id="noteContent" onChange={this.handleChangeContent} required>
+                <textarea
+                    type="text"
+                    name="noteContent"
+                    id="noteContent"
+                    aria-label="Contents of your new note"
+                    aria-required="true"
+                    onChange={this.handleChangeContent}
+                    required
+                >
                 </textarea>
                 <label htmlFor="noteFolder">
                     Select Folder:
                 </label>
-                <select name="noteFolder" id="noteFolder" onChange={this.handleChangeFolder} required>
+                <select
+                    name="noteFolder"
+                    id="noteFolder"
+                    aria-label="Select a folder for your new note"
+                    aria-required="true"
+                    onChange={this.handleChangeFolder}
+                    required
+                >
                     {folderList}
                 </select>
                 <button type="submit">

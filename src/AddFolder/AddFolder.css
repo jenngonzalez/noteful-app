@@ -28,3 +28,8 @@
     background: coral;
     color: white;
 }
+
+.add-folder-form .requiredField {
+    display: block;
+    font-size: 10px;
+}

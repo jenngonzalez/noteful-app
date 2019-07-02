@@ -3,7 +3,7 @@
 }
 
 body {
-    background: papayawhip;
+    background: ivory;
 }
 
 header {
@@ -14,8 +14,11 @@ header {
 
 header a {
     text-decoration: none;
-    color: darkslateblue;
+    color: #720056;
     letter-spacing: 5px;
+    font-family: 'Nunito';
+    font-size: 40px;
+    border-bottom: 5px double #720056;
 }
 
 .app-body {
