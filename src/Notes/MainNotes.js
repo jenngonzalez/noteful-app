@@ -14,9 +14,9 @@ export default class MainNotes extends Component {
                 <Link
                     to={`/note/${note.id}`}
                     key={note.id}
-                    aria-label={`"See contents of this note: ${note.name}"`}
+                    aria-label={`"See contents of this note: ${note.title}"`}
                 >
-                    {note.name}
+                    {note.title}
                 </Link>
             </li>
         )

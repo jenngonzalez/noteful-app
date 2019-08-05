@@ -42,6 +42,7 @@ class App extends Component {
     })
   }
 
+  updateNote = () => {};
 
   componentDidMount() {
     Promise.all([
@@ -67,7 +68,7 @@ class App extends Component {
         return Promise.all([foldersResponse.json(), notesResponse.json()]);
       })
       .then(([folders, notes]) => {
-        this.setState({folders, notes});
+        this.setState({folders, notes})
       })
       .catch(error => this.setState({ error }))
   }
@@ -79,7 +80,8 @@ class App extends Component {
       notes: this.state.notes,
       deleteNote: this.deleteNote,
       addFolder: this.addFolder,
-      addNote: this.addNote
+      addNote: this.addNote,
+      updateNote: this.updateNote
     }
 
     return (

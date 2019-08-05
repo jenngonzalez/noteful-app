@@ -11,13 +11,13 @@ export default class NoteSidebar extends Component {
         const { folders} = this.context;
         const { notes } = this.context;
         const findNote = notes.find(n =>
-            n.id === this.props.match.params.noteID
+            n.id == this.props.match.params.noteID
         )
         
-        const findFolder = findNote.folderId
+        const findFolder = findNote.folder_id
 
         const selectedFolder = folders.find(f =>
-            f.id === findFolder
+            f.id == findFolder
         )
 
         return (

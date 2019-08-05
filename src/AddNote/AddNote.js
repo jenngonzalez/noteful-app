@@ -17,12 +17,12 @@ class AddNote extends Component {
             newContent: '',
         }
 
-        this.handleChangeName = this.handleChangeName.bind(this);
+        this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeFolder = this.handleChangeFolder.bind(this);
         this.handleChangeContent = this.handleChangeContent.bind(this);
     }
 
-    handleChangeName(event) {
+    handleChangeTitle(event) {
         this.setState({newNote: event.target.value})
     }
 
@@ -37,9 +37,9 @@ class AddNote extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
         console.log(this.state.newFolderName);
-        const { noteName } = e.target
+        const { noteTitle } = e.target
         // const newNoteName = noteName.value
-        const newNoteName = this.state.newNote;
+        const newNoteTitle = this.state.newNote;
         const { noteContent } = e.target
         // const newNoteContent = noteContent.value
         const newNoteContent = this.state.newContent;
@@ -48,14 +48,14 @@ class AddNote extends Component {
         // how to rework this to call from state?
         const noteFolder = selectedFolder.options[selectedFolder.selectedIndex]
         const noteFolderId = noteFolder.id
-        const dateAdded = new Date()
+        const dateModified = new Date()
         const newId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
         const newNote = {
             id: newId,
-            name: newNoteName,
-            modified: dateAdded,
-            folderId: noteFolderId,
+            title: newNoteTitle,
+            date_modified: dateModified,
+            folder_id: noteFolderId,
             content: newNoteContent
         }
 
@@ -76,7 +76,7 @@ class AddNote extends Component {
                 return response.json()
             })
             .then(data => {
-                noteName.value=''
+                noteTitle.value=''
                 noteContent.value=''
                 this.context.addNote(data)
                 this.props.history.push('/')
@@ -99,16 +99,16 @@ class AddNote extends Component {
 
         return(
             <form className="add-note-form" onSubmit={this.handleSubmit}>
-                <label htmlFor="noteName">
-                    Note Name:
+                <label htmlFor="noteTitle">
+                    Note Title:
                 </label>
                 <input
                     type="text"
-                    name="noteName"
-                    id="noteName"
-                    aria-label="Name for your new note"
+                    name="noteTitle"
+                    id="noteTitle"
+                    aria-label="Title for your new note"
                     aria-required="true"
-                    onChange={this.handleChangeName}
+                    onChange={this.handleChangeTitle}
                     required
                 >
                 </input>

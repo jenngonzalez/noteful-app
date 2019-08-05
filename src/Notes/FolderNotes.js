@@ -10,16 +10,16 @@ export default class FolderNotes extends Component {
     render() {
         const { notes } = this.context;
         const note = notes.filter(n =>
-            n.folderId === this.props.match.params.folderID
+            n.folder_id == this.props.match.params.folderID
         )
         const uniqueNote = note.map((n, index) =>
             <li key={index}>
                 <Link
                     to={`/note/${n.id}`}
                     key={n.id}
-                    aria-label={`"See contents of this note: ${n.name}"`}
+                    aria-label={`"See contents of this note: ${n.title}"`}
                 >
-                    {n.name}
+                    {n.title}
                 </Link>
             </li>
         )

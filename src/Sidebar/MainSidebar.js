@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import NotefulContext from '../Noteful-context';
 import './MainSidebar.css';
 
+// TODO: why is the folderID on props.match.params a STRING and not an INTEGER? === must be changed to == to get equality
+
 export default class MainSidebar extends Component {
 
     static contextType = NotefulContext;

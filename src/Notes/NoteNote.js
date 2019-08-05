@@ -6,7 +6,7 @@ import deleteNote from './delete-note';
 import "./NoteNote.css"
 
 
-
+// TODO: figure out why props.match.params.noteID is a string and not an integer
 
 export default class NoteNote extends Component {
 
@@ -16,13 +16,12 @@ export default class NoteNote extends Component {
     render() {
         const { notes } = this.context
         const selectedNote = notes.find(note =>
-            note.id === this.props.match.params.noteID
+            note.id == this.props.match.params.noteID
         )
-
         return (
         <div className="note-body">
             <p>{selectedNote.content}</p>
-            <p>Modified: {format(selectedNote.modified, 'Do MMM YYYY')}</p>
+            <p>Modified: {format(selectedNote.date_modified, 'Do MMM YYYY')}</p>
             <button
                 type="button"
                 onClick={() => {
