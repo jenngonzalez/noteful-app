@@ -1,4 +1,4 @@
 export default {
-    API_FOLDERS: `http://localhost:8000/api/folders/`,
-    API_NOTES: `http://localhost:8000/api/notes/`,
+    API_FOLDERS: `https://safe-stream-33567.herokuapp.com/api/folders`,
+    API_NOTES: `https://safe-stream-33567.herokuapp.com/api/notes`,
   }

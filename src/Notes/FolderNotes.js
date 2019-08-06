@@ -10,7 +10,7 @@ export default class FolderNotes extends Component {
     render() {
         const { notes } = this.context;
         const note = notes.filter(n =>
-            n.folder_id == this.props.match.params.folderID
+            n.folder_id === Number(this.props.match.params.folderID)
         )
         const uniqueNote = note.map((n, index) =>
             <li key={index}>

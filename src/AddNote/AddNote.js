@@ -49,10 +49,10 @@ class AddNote extends Component {
         const noteFolder = selectedFolder.options[selectedFolder.selectedIndex]
         const noteFolderId = noteFolder.id
         const dateModified = new Date()
-        const newId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        // const newId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
         const newNote = {
-            id: newId,
+            // id: newId,
             title: newNoteTitle,
             date_modified: dateModified,
             folder_id: noteFolderId,

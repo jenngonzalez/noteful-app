@@ -16,7 +16,7 @@ export default class NoteNote extends Component {
     render() {
         const { notes } = this.context
         const selectedNote = notes.find(note =>
-            note.id == this.props.match.params.noteID
+            note.id === Number(this.props.match.params.noteID)
         )
         return (
         <div className="note-body">

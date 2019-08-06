@@ -29,9 +29,9 @@ class AddFolder extends Component {
         const { folderName } = e.target
         // const userFolder = folderName.value
         const userFolder = this.state.newFolder;
-        const newId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        // const newId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
         const newFolder = {
-            id: newId,
+            // id: newId,
             name: userFolder
         }
         this.setState({ error: null })

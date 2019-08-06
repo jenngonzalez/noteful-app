@@ -13,6 +13,8 @@ import AppError from './AppError';
 import config from './config';
 import './App.css'
 
+// TODO: create PATCH ability for folders and notes
+
 class App extends Component {
   
   state = {
@@ -23,7 +25,7 @@ class App extends Component {
 
   deleteNote = noteId => {
     const newNotes = this.state.notes.filter(note =>
-      note.id !== noteId
+      note.id !== Number(noteId)
     )
     this.setState({
       notes: newNotes
@@ -72,6 +74,7 @@ class App extends Component {
       })
       .catch(error => this.setState({ error }))
   }
+
 
   render() {
 
